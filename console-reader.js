@@ -1,4 +1,12 @@
-define (["./reverse"], (function (reverseArr) {
+define (["./commands/reverse",
+    "./commands/delete",
+    "./commands/roll",
+    "./commands/sort",
+    "./commands/count",
+    "./commands/prepend",
+    "./commands/insert",
+    "./commands/append"], (function (reverseArr, deleteArr, rollArr, sortArr, countArr, prependArr, insertArr) {
+
     let theArray = [];
     let initialized = false;
 
@@ -28,6 +36,23 @@ define (["./reverse"], (function (reverseArr) {
                 }
                 inputCommands.val('');
                 break;
+            case 'append':
+                break;
+            case 'prepend':
+                break;
+            case 'insert':
+                break;
+            case 'delete':
+                break;
+            case 'roll':
+                break;
+            case 'sort':
+                break;
+            case 'count':
+                break;
+            case 'end':
+                break;
+
             default: terminal.val(terminal.val() + 'Error: Invalid command!' + '\n');
                 inputCommands.val('');
         }
