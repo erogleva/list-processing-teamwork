@@ -3,7 +3,7 @@ define ([], function () {
     function roll(array, commands) {
 
         if (commands.length === 1 || commands.length > 2) {
-            throw new Error('Invalid parameters!');
+            throw new Error('Error: invalid command parameters');
         }
 
         let rollDirection = commands[1];
