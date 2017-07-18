@@ -16,7 +16,7 @@ define (["./commands/reverse",
     inputCommands.on('keypress', (e) => e.which === 13 ? submit() : '');
 
     function submit() {
-        let commandTokens = inputCommands.val().split(' ').filter((e) => e !== ' ');
+        let commandTokens = inputCommands.val().replace(/ {2,}/g, ' ' ).split(' ').filter((e) => e !== ' ');
         if(!initialized){
             theArray = commandTokens.slice(0);
             terminal.val(theArray.join(' ') + '\n');
@@ -47,7 +47,7 @@ define (["./commands/reverse",
                     break;
                 case 'delete':
                     break;
-                case 'roll': // TODO
+                case 'roll':
                     result = rollArr.roll(theArray, commandTokens);
                     terminal.val(terminal.val() + theArray.join(' ') + '\n');
                     break;
@@ -57,8 +57,7 @@ define (["./commands/reverse",
                     break;
                 case 'end':
                     break;
-
-                default: terminal.val(terminal.val() + 'Error: Invalid command!' + '\n');
+                default: throw new Error('Invalid command!');
                 //inputCommands.val(''); // down after the switch, avoid code repeating
             }
         } catch (err) {
