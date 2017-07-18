@@ -31,13 +31,7 @@ define (["./commands/reverse",
             switch(commandTokens[0]){
                 case 'reverse':
                     result = reverseArr.reverseArr(theArray, commandTokens);
-                    if(Array.isArray(result)){
-                        theArray = result.slice(0);
-                        terminal.val(terminal.val() + theArray.join(' ') + '\n');
-                    } else {
-                        terminal.val(terminal.val() + result + '\n');
-                    }
-                    //inputCommands.val(''); // down after the switch, avoid code repeating
+                    theArray = result.slice(0);
                     break;
                 case 'append':
                     break;
@@ -49,7 +43,6 @@ define (["./commands/reverse",
                     break;
                 case 'roll':
                     result = rollArr.roll(theArray, commandTokens);
-                    terminal.val(terminal.val() + theArray.join(' ') + '\n');
                     break;
                 case 'sort':
                     break;
@@ -60,6 +53,9 @@ define (["./commands/reverse",
                 default: throw new Error('Invalid command!');
                 //inputCommands.val(''); // down after the switch, avoid code repeating
             }
+
+            terminal.val(terminal.val() + theArray.join(' ') + '\n');
+
         } catch (err) {
             terminal.val(terminal.val() + err.message + '\n');
         }

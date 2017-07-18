@@ -1,15 +1,15 @@
 define ([], function () {
     function reverseArr(arr, commandTokens) {
         if(commandTokens.length > 1){
-            return 'Invalid parameters!'
+            throw new Error ('Invalid parameters!');
         }
-        let thisArray = arr.slice(0);
-        thisArray.reverse();
-        return thisArray;
+
+        let theArray = arr.reverse();
+        return theArray;
     }
 
     return {
-        reverseArr: reverseArr
+        reverseArr
     };
 
 });
