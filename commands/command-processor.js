@@ -1,11 +1,11 @@
 define(["./reverse",
-    "./delete",
-    "./roll",
-    "./sort",
-    "./count",
-    "./prepend",
-    "./insert",
-    "./append"], (function (reverseArr, deleteArr, rollArr, sortArr, countArr, prependArr, insertArr) {
+        "./delete",
+        "./roll",
+        "./sort",
+        "./count",
+        "./prepend",
+        "./append",
+        "./insert"], (function (reverseArr, deleteArr, rollArr, sortArr, countArr, prependArr, appendArr, insertArr) {
 
     function process(terminal, theArray, commandTokens) {
 
@@ -17,12 +17,6 @@ define(["./reverse",
                     result = reverseArr.reverseArr(theArray, commandTokens);
                     theArray = result.slice(0);
                     break;
-                case 'append':
-                    break;
-                case 'prepend':
-                    break;
-                case 'insert':
-                    break;
                 case 'delete':
                     break;
                 case 'roll':
@@ -31,6 +25,12 @@ define(["./reverse",
                 case 'sort':
                     break;
                 case 'count':
+                    break;
+                case 'prepend':
+                    break;
+                case 'append':
+                    break;
+                case 'insert':
                     break;
                 case 'end':
                     break;
