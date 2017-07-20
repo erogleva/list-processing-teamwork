@@ -18,6 +18,7 @@ define(["./reverse",
                     theArray = result.slice(0);
                     break;
                 case 'delete':
+                    result = deleteArr.deleteArr(theArray, commandTokens);
                     break;
                 case 'roll':
                     result = rollArr.roll(theArray, commandTokens);
@@ -25,10 +26,13 @@ define(["./reverse",
                 case 'sort':
                     break;
                 case 'count':
-                    break;
+                    result = countArr.countArr(theArray, commandTokens);
+                    terminal.val(terminal.val() + result + '\n');
+                    return;
                 case 'prepend':
                     break;
                 case 'append':
+                    result = appendArr.appendArr(theArray, commandTokens);
                     break;
                 case 'insert':
                     break;
