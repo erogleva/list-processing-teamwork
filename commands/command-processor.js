@@ -15,7 +15,6 @@ define(["./reverse",
             switch (commandTokens[0]) {
                 case 'reverse':
                     result = reverseArr.reverseArr(theArray, commandTokens);
-                    theArray = result.slice(0);
                     break;
                 case 'delete':
                     result = deleteArr.deleteArr(theArray, commandTokens);
@@ -24,6 +23,7 @@ define(["./reverse",
                     result = rollArr.roll(theArray, commandTokens);
                     break;
                 case 'sort':
+                    result = sortArr.sortArr(theArray, commandTokens);
                     break;
                 case 'count':
                     result = countArr.countArr(theArray, commandTokens);

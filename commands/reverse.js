@@ -4,8 +4,7 @@ define ([], function () {
             throw new Error ('Invalid parameters!');
         }
 
-        let theArray = arr.reverse();
-        return theArray;
+        arr.reverse();
     }
 
     return {
