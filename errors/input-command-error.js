@@ -1,14 +1,9 @@
-define([], function () {
+define ([], function () {
 
-    class InputCommandError extends Error {
-        constructor(message) {
-            let defaultOrMessage = message || "Error: Invalid command!";
-            super(defaultOrMessage);
-        }
+    return function InputError(message) {
+        this.name = this.constructor.name;
+        this.message = message || "Error: Invalid command!";
+        InputError.prototype = Error.prototype;
     }
-
-    return {
-        InputCommandError
-    };
 
 });
