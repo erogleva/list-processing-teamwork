@@ -8,8 +8,8 @@ define(["./reverse",
         "./insert",
         "./end",
         "../errors/input-command-error"], (function (reverseArr, deleteArr, rollArr, sortArr,
-                                                    countArr, prependArr, appendArr,
-                                                    insertArr,end,inputCommandError) {
+                                                         countArr, prependArr, appendArr,
+                                                         insertArr, end, InputCommandError) {
 
     function process(terminal,input,button, theArray, commandTokens) {
 
@@ -47,7 +47,7 @@ define(["./reverse",
                     terminal.val(terminal.val() + "Finished" + '\n');
                     return;
                 default:
-                    throw new inputCommandError.InputCommandError();
+                    throw new InputCommandError();
             }
 
             terminal.val(terminal.val() + theArray.join(' ') + '\n');
