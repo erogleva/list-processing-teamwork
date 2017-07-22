@@ -1,8 +1,11 @@
-define(["../errors/input-error"], function (inputError) {
+define(["../errors/command-parameter-error"], function (InputError) {
+
     function prependArr(arr, commandTokens) {
+
         if(commandTokens.length !== 2){
-            throw new inputError.InputError();
+            throw new InputError();
         }
+        
         let theArray = arr.unshift(commandTokens[1]);
         return theArray;
     }
