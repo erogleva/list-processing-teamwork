@@ -1,9 +1,9 @@
 define ([], function () {
 
-    return function InputError(message) {
+    return function InputCommandError(message) {
         this.name = this.constructor.name;
         this.message = message || "Error: Invalid command!";
-        InputError.prototype = Error.prototype;
+        InputCommandError.prototype = Error.prototype;
     }
 
 });
