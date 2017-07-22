@@ -1,7 +1,7 @@
-define([], function () {
+define(["../errors/input-error"], function (inputError) {
     function prependArr(arr, commandTokens) {
         if(commandTokens.length !== 2){
-            throw new Error ('Invalid parameters!');
+            throw new inputError.InputError();
         }
         let theArray = arr.unshift(commandTokens[1]);
         return theArray;

@@ -1,7 +1,7 @@
-define ([], function () {
+define (["../errors/input-error"], function (inputError) {
     function reverseArr(arr, commandTokens) {
         if(commandTokens.length > 1){
-            throw new Error ('Invalid parameters!');
+            throw new inputError.InputError();
         }
 
         arr.reverse();

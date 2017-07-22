@@ -6,7 +6,10 @@ define(["./reverse",
         "./prepend",
         "./append",
         "./insert",
-        "./end"], (function (reverseArr, deleteArr, rollArr, sortArr, countArr, prependArr, appendArr, insertArr,end) {
+        "./end",
+        "../errors/input-command-error"], (function (reverseArr, deleteArr, rollArr, sortArr,
+                                                    countArr, prependArr, appendArr,
+                                                    insertArr,end,inputCommandError) {
 
     function process(terminal,input,button, theArray, commandTokens) {
 
@@ -44,13 +47,13 @@ define(["./reverse",
                     terminal.val(terminal.val() + "Finished" + '\n');
                     return;
                 default:
-                    throw new Error('Invalid command!');
+                    throw new inputCommandError.InputCommandError();
             }
 
             terminal.val(terminal.val() + theArray.join(' ') + '\n');
 
         } catch (err) {
-            terminal.val(terminal.val() + "Error: " + err.message + '\n');
+            terminal.val(terminal.val() + err.message + '\n');
         }
     }
 

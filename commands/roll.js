@@ -1,15 +1,15 @@
-define ([], function () {
+define (["../errors/input-error"], function (inputError) {
 
     function roll(array, commands) {
 
         if (commands.length === 1 || commands.length > 2) {
-            throw new Error('invalid command parameters');
+            throw new inputError.InputError();
         }
 
         let rollDirection = commands[1];
 
         if (rollDirection !== 'left' && rollDirection !== 'right') {
-            throw new Error('invalid command parameters');
+            throw new inputError.InputError();
         }
 
         let currArrElem;
