@@ -41,7 +41,7 @@ define(["./reverse",
                     break;
                 case 'end':
                     end.end(input,button);
-                    terminal.val(terminal.val() + "end" + '\n');
+                    terminal.val(terminal.val() + "Finished" + '\n');
                     return;
                 default:
                     throw new Error('Invalid command!');
