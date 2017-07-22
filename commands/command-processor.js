@@ -30,6 +30,7 @@ define(["./reverse",
                     terminal.val(terminal.val() + result + '\n');
                     return;
                 case 'prepend':
+                    result = prependArr.prependArr(theArray,commandTokens);
                     break;
                 case 'append':
                     result = appendArr.appendArr(theArray, commandTokens);
