@@ -36,6 +36,7 @@ define(["./reverse",
                     result = appendArr.appendArr(theArray, commandTokens);
                     break;
                 case 'insert':
+                    result = insertArr.insertArr(theArray,commandTokens);
                     break;
                 case 'end':
                     break;
