@@ -1,8 +1,8 @@
-define (["../errors/input-error"], function (inputError) {
+define(["../errors/command-parameter-error"], function (InputError) {
 
     function countArr(arr, commandTokens) {
         if(commandTokens.length !== 2){
-            throw new inputError.InputError();
+            throw new InputError();
         }
 
         let element = commandTokens[1];
