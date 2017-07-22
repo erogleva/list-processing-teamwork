@@ -5,9 +5,10 @@ define(["./reverse",
         "./count",
         "./prepend",
         "./append",
-        "./insert"], (function (reverseArr, deleteArr, rollArr, sortArr, countArr, prependArr, appendArr, insertArr) {
+        "./insert",
+        "./end"], (function (reverseArr, deleteArr, rollArr, sortArr, countArr, prependArr, appendArr, insertArr,end) {
 
-    function process(terminal, theArray, commandTokens) {
+    function process(terminal,input,button, theArray, commandTokens) {
 
         let result;
 
@@ -39,7 +40,9 @@ define(["./reverse",
                     result = insertArr.insertArr(theArray,commandTokens);
                     break;
                 case 'end':
-                    break;
+                    end.end(input,button);
+                    terminal.val(terminal.val() + "end" + '\n');
+                    return;
                 default:
                     throw new Error('Invalid command!');
             }

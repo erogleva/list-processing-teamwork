@@ -5,7 +5,8 @@ define (["./commands/command-processor"], (function (commandProcessor) {
 
     let terminal = $('#display');
     let inputCommands = $('#input-commands');
-    $('#btn-enter').on('click', submit);
+    let button = $('#btn-enter');
+    button.on('click', submit);
     inputCommands.on('keypress', (e) => e.which === 13 ? submit() : '');
 
     function submit() {
@@ -21,7 +22,7 @@ define (["./commands/command-processor"], (function (commandProcessor) {
             return;
         }
 
-        commandProcessor.process(terminal, theArray, commandTokens);
+        commandProcessor.process(terminal,inputCommands,button, theArray, commandTokens);
 
         inputCommands.val('');
     }
