@@ -1,7 +1,9 @@
-define (["../errors/input-error"], function (inputError) {
+define(["../errors/command-parameter-error"], function (InputError) {
+
     function reverseArr(arr, commandTokens) {
+
         if(commandTokens.length > 1){
-            throw new inputError.InputError();
+            throw new InputError();
         }
 
         arr.reverse();
