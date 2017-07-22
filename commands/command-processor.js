@@ -50,7 +50,7 @@ define(["./reverse",
             terminal.val(terminal.val() + theArray.join(' ') + '\n');
 
         } catch (err) {
-            terminal.val(terminal.val() + err.message + '\n');
+            terminal.val(terminal.val() + "Error: " + err.message + '\n');
         }
     }
 
