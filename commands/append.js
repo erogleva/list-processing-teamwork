@@ -1,8 +1,8 @@
-define(["../errors/input-error"], function (inputError) {
+define(["../errors/command-parameter-error"], function (InputError) {
 
     function appendArr(arr, commandTokens) {
         if (commandTokens.length !== 2) {
-            throw new inputError.InputError();
+            throw new InputError();
         }
 
         let theArray = arr.push(commandTokens[1]);
